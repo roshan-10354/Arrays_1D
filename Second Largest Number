@@ -1,0 +1,36 @@
+import java.io.*;
+import java.util.*;
+
+public class Solution {
+
+    public static void main(String[] args) {
+       Scanner sc=new Scanner(System.in);
+       int n=sc.nextInt();
+       int arr[]=new int [n];
+       for(int i=0;i<n;i++)
+       {
+        arr[i]=sc.nextInt();
+       }
+       
+       int m=arr[0];
+       for(int i=0;i<n;i++)
+       {
+        if(arr[i]>m)
+        m=arr[i];
+       }
+       
+       int t=arr[0];
+       for(int i=0;i<n;i++)
+       {
+        if(arr[i]>t && arr[i]<m)
+        {
+            t=arr[i];
+        } 
+       }
+       if(t!=m)
+       {System.out.print(t);
+       return;}
+       else
+       System.out.print("No second largest number");
+    }
+}
